@@ -30,6 +30,12 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>PFDinDisplayPro-Bold.ttf</string>
+		<string>PFDinDisplayPro-Thin.ttf</string>
+		<string>PFDinDisplayPro-Reg.ttf</string>
+	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
