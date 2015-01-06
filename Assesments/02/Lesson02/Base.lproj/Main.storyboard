@@ -51,10 +51,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placeholder text, replace me!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2W-sh-fBn">
-                                <rect key="frame" x="138" y="249" width="325" height="101"/>
+                                <rect key="frame" x="138" y="249" width="325" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="325" id="0YK-KA-gJL"/>
-                                    <constraint firstAttribute="height" constant="101" id="SfY-p1-xrP"/>
+                                    <constraint firstAttribute="height" constant="45" id="SfY-p1-xrP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -69,19 +69,67 @@
                                 <state key="normal" title="Generate text!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="GenTextButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="tDE-vI-nbw"/>
+                                    <action selector="checkAge:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fGF-bN-27t"/>
+                                    <action selector="checkAgeTwo:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="EGb-LQ-2Wd"/>
+                                    <action selector="printNameAndAgeLabel:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="XLv-Az-gxP"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placeholder text, replace me!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wx5-bF-Lx9">
+                                <rect key="frame" x="138" y="314" width="325" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="325" id="P2g-ZH-CWe"/>
+                                    <constraint firstAttribute="height" constant="45" id="bBm-Vv-t5S"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placeholder text, replace me!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PlC-p6-reI">
+                                <rect key="frame" x="138" y="375" width="325" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="325" id="TgI-Dg-V3g"/>
+                                    <constraint firstAttribute="height" constant="45" id="aHP-UY-kyw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placeholder text, replace me!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sW5-P1-nJT">
+                                <rect key="frame" x="138" y="435" width="325" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="PPZ-c7-2mY"/>
+                                    <constraint firstAttribute="width" constant="325" id="h0z-Kj-pTE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Wx5-bF-Lx9" firstAttribute="top" secondItem="v2W-sh-fBn" secondAttribute="bottom" constant="20" id="4U5-A3-VXe"/>
                             <constraint firstAttribute="centerX" secondItem="v2W-sh-fBn" secondAttribute="centerX" id="68c-ag-RaM"/>
+                            <constraint firstItem="sW5-P1-nJT" firstAttribute="top" secondItem="PlC-p6-reI" secondAttribute="bottom" constant="15" id="AC2-3b-rTS"/>
+                            <constraint firstAttribute="centerX" secondItem="PlC-p6-reI" secondAttribute="centerX" id="CeY-Kl-Yca"/>
                             <constraint firstItem="dvu-Gz-gU3" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="26" id="Dag-Q3-O8a"/>
                             <constraint firstAttribute="centerX" secondItem="vvU-j8-0it" secondAttribute="centerX" id="Dpp-YF-b3T"/>
+                            <constraint firstItem="Wx5-bF-Lx9" firstAttribute="top" secondItem="vvU-j8-0it" secondAttribute="bottom" constant="94" id="ESE-U1-ST3"/>
+                            <constraint firstItem="PlC-p6-reI" firstAttribute="top" secondItem="Wx5-bF-Lx9" secondAttribute="bottom" constant="16" id="MCa-oz-rCT"/>
                             <constraint firstItem="v2W-sh-fBn" firstAttribute="top" secondItem="vvU-j8-0it" secondAttribute="bottom" constant="31" id="P1u-Fz-KUb"/>
+                            <constraint firstAttribute="centerX" secondItem="sW5-P1-nJT" secondAttribute="centerX" id="dnz-Cc-u5o"/>
                             <constraint firstItem="HD3-Of-BAd" firstAttribute="top" secondItem="dvu-Gz-gU3" secondAttribute="bottom" constant="19" id="gLg-zz-mbV"/>
+                            <constraint firstAttribute="centerX" secondItem="Wx5-bF-Lx9" secondAttribute="centerX" id="ldp-3I-aSZ"/>
                             <constraint firstAttribute="centerX" secondItem="dvu-Gz-gU3" secondAttribute="centerX" id="nEN-5d-05d"/>
                             <constraint firstItem="vvU-j8-0it" firstAttribute="top" secondItem="HD3-Of-BAd" secondAttribute="bottom" constant="19" id="uE4-OL-hCH"/>
                             <constraint firstAttribute="centerX" secondItem="HD3-Of-BAd" secondAttribute="centerX" id="xtl-7l-iVd"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ESE-U1-ST3"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="eCL-8y-xIB">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="Yim-2Z-LSM">
@@ -91,6 +139,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="ageCheckLabel" destination="PlC-p6-reI" id="0ad-yt-fXl"/>
+                        <outlet property="ageCheckLabelTwo" destination="sW5-P1-nJT" id="aex-IY-83Z"/>
+                        <outlet property="ageField" destination="HD3-Of-BAd" id="vwF-e6-kgP"/>
+                        <outlet property="nameAndAgeLabel" destination="Wx5-bF-Lx9" id="uhZ-hq-tqf"/>
+                        <outlet property="nameField" destination="dvu-Gz-gU3" id="w0g-E0-rtg"/>
                         <outlet property="testName" destination="v2W-sh-fBn" id="OqA-E3-gEa"/>
                     </connections>
                 </viewController>
@@ -138,6 +191,9 @@
                                 <state key="normal" title="Add">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addButton:" destination="DXI-gN-4Tg" eventType="touchUpInside" id="pbz-bu-4UE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -157,6 +213,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="newNumber" destination="dsS-73-FSq" id="cQj-xQ-RpK"/>
+                        <outlet property="numberSum" destination="qiz-6d-s2d" id="yf2-Y7-TTz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bFb-9H-Aa6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -202,6 +262,9 @@
                                 <state key="normal" title="Calculate">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="isEvenOrOddButton:" destination="nKH-F5-XzW" eventType="touchUpInside" id="RhU-4P-pph"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -221,6 +284,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="evenOddLabel" destination="y0y-Zz-8RE" id="OdH-gF-sBB"/>
+                        <outlet property="numberEntered" destination="UJA-B5-7Cz" id="Vl2-cP-qfw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bic-8V-fDA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -256,6 +323,9 @@
                                 <state key="normal" title="Calculate">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="fibCalculateButton:" destination="BPG-Q0-b6p" eventType="touchUpInside" id="m0H-zf-85U"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Should print the xth fibonacci number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hpk-q1-6qc">
                                 <rect key="frame" x="155" y="138" width="290" height="21"/>
@@ -278,6 +348,10 @@
                             <constraint firstItem="uuM-Ik-raV" firstAttribute="top" secondItem="Hpk-q1-6qc" secondAttribute="bottom" constant="21" id="scm-VI-6lk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="fibIndex" destination="Y9T-1j-GS4" id="yFW-k9-0mA"/>
+                        <outlet property="fibValue" destination="Hpk-q1-6qc" id="O5i-m4-UVj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LL4-Hq-ZaT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
