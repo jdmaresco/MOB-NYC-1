@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="G0q-Oc-BQG">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -32,20 +33,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMl-Di-GNm">
-                                <rect key="frame" x="154" y="187" width="293.5" height="154"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="293.5" id="pEs-UT-NKI"/>
-                                    <constraint firstAttribute="height" constant="154" id="z5Q-zy-Nta"/>
-                                </constraints>
-                                <string key="text">TODO: When this is swiped horizontally,
-a modal should appear.
-It needs to have an image view and a dismiss button that dismisses the modal. Do this in code.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AG3-bY-Vru">
                                 <rect key="frame" x="236" y="382" width="128" height="30"/>
                                 <constraints>
@@ -55,24 +42,96 @@ It needs to have an image view and a dismiss button that dismisses the modal. Do
                                 <state key="normal" title="Display Table View">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="showTableButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="LbN-wP-XCE"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe on the blank part of this screen to see a picture of a sunset." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMl-Di-GNm">
+                                <rect key="frame" x="135" y="185" width="330" height="154"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="330" id="5Np-i8-Rf1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="AG3-bY-Vru" secondAttribute="centerX" id="0zs-lK-Y2n"/>
+                            <constraint firstItem="NMl-Di-GNm" firstAttribute="centerX" secondItem="AG3-bY-Vru" secondAttribute="centerX" id="P08-bI-F39"/>
                             <constraint firstAttribute="centerY" secondItem="AG3-bY-Vru" secondAttribute="centerY" constant="-97" id="RgT-FV-BaV"/>
-                            <constraint firstAttribute="centerX" secondItem="NMl-Di-GNm" secondAttribute="centerX" id="daB-TD-fOi"/>
-                            <constraint firstAttribute="centerY" secondItem="NMl-Di-GNm" secondAttribute="centerY" constant="36" id="lkv-nx-NKf"/>
+                            <constraint firstItem="NMl-Di-GNm" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="121" id="ctq-9f-kru"/>
+                            <constraint firstItem="NMl-Di-GNm" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="154" id="pfs-Y1-JNL"/>
+                            <constraint firstItem="AG3-bY-Vru" firstAttribute="top" secondItem="NMl-Di-GNm" secondAttribute="bottom" constant="43" id="zMQ-Aq-xKj"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="pfs-Y1-JNL"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="hzY-Hy-RMA"/>
                     <connections>
-                        <segue destination="tH5-nV-9zA" kind="show" identifier="show" id="O1F-Kb-DN0"/>
+                        <outlet property="swipeableView" destination="kh9-bI-dsS" id="L8h-da-7v1"/>
+                        <segue destination="WrM-Jh-Qr6" kind="presentation" identifier="imageShow" id="Y2y-Zn-xpn"/>
+                        <segue destination="tH5-nV-9zA" kind="show" identifier="showMyTable" id="5eN-3a-8Cs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="282.75" y="407"/>
+            <point key="canvasLocation" x="282" y="407"/>
+        </scene>
+        <!--View Controller Sunset-->
+        <scene sceneID="XPm-BV-3So">
+            <objects>
+                <viewController id="WrM-Jh-Qr6" customClass="ViewControllerSunset" customModule="Lesson03" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bdQ-v1-jim"/>
+                        <viewControllerLayoutGuide type="bottom" id="WSM-tj-5se"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yq4-DH-UbF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="sunset.png" translatesAutoresizingMaskIntoConstraints="NO" id="B7M-xS-dHb">
+                                <rect key="frame" x="0.0" y="0.0" width="673" height="580"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OGz-V7-BZ6">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Dismiss Image" id="GCP-Yg-jg8">
+                                        <connections>
+                                            <action selector="dismissSunset:" destination="WrM-Jh-Qr6" id="KUb-lP-p1e"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OGz-V7-BZ6" firstAttribute="leading" secondItem="yq4-DH-UbF" secondAttribute="leadingMargin" constant="-16" id="4eu-sh-gZu"/>
+                            <constraint firstItem="WSM-tj-5se" firstAttribute="top" secondItem="OGz-V7-BZ6" secondAttribute="bottom" id="B0q-J1-m9q"/>
+                            <constraint firstItem="B7M-xS-dHb" firstAttribute="leading" secondItem="yq4-DH-UbF" secondAttribute="leadingMargin" id="Ku8-Gk-DpJ"/>
+                            <constraint firstItem="WSM-tj-5se" firstAttribute="top" secondItem="B7M-xS-dHb" secondAttribute="bottom" id="QYC-sO-6gM"/>
+                            <constraint firstItem="B7M-xS-dHb" firstAttribute="top" secondItem="yq4-DH-UbF" secondAttribute="topMargin" id="dYR-QY-46A"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="B7M-xS-dHb" secondAttribute="trailing" id="hZm-th-Fsd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OGz-V7-BZ6" secondAttribute="trailing" constant="-16" id="ohy-Yz-EzD"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Ku8-Gk-DpJ"/>
+                                <exclude reference="hZm-th-Fsd"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nV6-DN-FRb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="323" y="1182"/>
         </scene>
         <!--Array Table View Controller-->
         <scene sceneID="hS5-QX-ITe">
@@ -93,4 +152,7 @@ It needs to have an image view and a dismiss button that dismisses the modal. Do
             <point key="canvasLocation" x="969" y="407"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="sunset.png" width="2448" height="3264"/>
+    </resources>
 </document>
