@@ -10,11 +10,14 @@ import UIKit
 
 class ModalViewController: UIViewController {
 
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var statusField: UITextField!
+    @IBOutlet weak var dueDateField: UITextField!
+    
     var todoViewController: MainTableViewController?
     
     @IBAction func didTapButton(sender: AnyObject) {
-        todoViewController?.todos.append(textField.text)
+        todoViewController?.todos.append(["content":nameField.text, "status":statusField.text, "due date":dueDateField.text])
         
         dismissViewControllerAnimated(true, completion: nil)
     }

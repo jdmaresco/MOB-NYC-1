@@ -10,7 +10,7 @@ import UIKit
 
 class MainTableViewController: UITableViewController {
 
-    var todos = ["groceries", "homework", "walk dog"]
+    var todos = [["content":"Make a difference", "status":"In Progress", "due date":"1/1/2022"],["content":"Get rich", "status":"Not Started", "due date":"someday"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +49,9 @@ class MainTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
         
-        cell.textLabel?.text = todos[indexPath.row]
+        cell.textLabel?.text = todos[indexPath.row]["content"]! + " (" + todos[indexPath.row]["status"]! + ") - Due " + todos[indexPath.row]["due date"]!
+        
+        println(indexPath.row)
         return cell
     }
 
