@@ -43,7 +43,36 @@ class SixthViewController: ExerciseViewController, UITableViewDelegate, UITableV
         Add a label to each cell that is green and centered, and have its text say “Row {X}” (X is the row number of the cell). The tableview should rotate correctly. Use Autolayout.
         */
         
+        
+        // REMOVE ALL EXISTING LABELS INCELL
+        // This avoids ending up with overlapping labels due to cell being reused
+        
+        for subview in cell!.subviews {
+            if subview.isKindOfClass(UILabel) {
+                subview.removeFromSuperview()
+            }
+        }
+        
+        // ADD LABEL TO CELL AND FORMAT
+        
+        var newLabel = UILabel()
+
+        newLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
+        newLabel.tag = 44
+        newLabel.font = UIFont.systemFontOfSize(14.0)
+        newLabel.textColor = .greenColor()
+        newLabel.textAlignment = .Center
+        newLabel.text = "Row \(indexPath.row + 1)"
+
+        cell!.addSubview(newLabel)
+        
+        // ADD CENTERING CONSTRAINTS TO LABEL
+        
+        cell!.addConstraint(NSLayoutConstraint(item: newLabel, attribute: .CenterX, relatedBy: .Equal, toItem: cell!, attribute: .CenterX, multiplier: 1, constant: 0))
+        cell!.addConstraint(NSLayoutConstraint(item: newLabel, attribute: .CenterY, relatedBy: .Equal, toItem: cell!, attribute: .CenterY, multiplier: 1, constant: 0))
+        
         return cell!
+        
     }
     
     override func shouldAutorotate() -> Bool {

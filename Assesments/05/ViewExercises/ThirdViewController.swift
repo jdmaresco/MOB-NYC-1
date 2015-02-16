@@ -10,6 +10,8 @@ import UIKit
 
 class ThirdViewController: ExerciseViewController {
 
+    var ul = UIView(), ur = UIView(), ll = UIView(), lr = UIView(), spacer = UIView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.exerciseDescription.text = "View 3"
@@ -23,19 +25,40 @@ class ThirdViewController: ExerciseViewController {
         //
         
         //make four views for four corners
-        /*var ul = UIView()
-        var ur = UIView()
-        var ll = UIView()
-        var lr = UIView()
-        
+    
+        let views = ["ul": ul, "ur": ur, "ll": ll, "lr": lr, "spacer": spacer, "toolbar": self.toolbar, "topLayoutGuide": topLayoutGuide, "bottomLayoutGuide": bottomLayoutGuide]
+    
         for view in [ul, ur, ll, lr] {
             view.backgroundColor = UIColor.blueColor()
-            view.setTranslatesAutoresizingMaskIntoConstraints(false)  // what does this do?
+            view.setTranslatesAutoresizingMaskIntoConstraints(false)
             self.exerciseView.addSubview(view)
-            
-            view.addConstraint(NSLayoutConstraint(item: <#AnyObject#>, attribute: <#NSLayoutAttribute#>, relatedBy: <#NSLayoutRelation#>, toItem: <#AnyObject?#>, attribute: <#NSLayoutAttribute#>, multiplier: <#CGFloat#>, constant: <#CGFloat#>)
-        }*/
+        }
+        spacer.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.exerciseView.addSubview(spacer)
         
+        // Layout upper left block
+        // Used topLayoutGuide to position blocks properly on rotation.
+        
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[ul(==20)]", options: nil, metrics: nil, views: views))
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[topLayoutGuide][ul(==20)]", options: nil, metrics: nil, views: views))
+        
+        //Layout upper right block
+        
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[ur(==20)]|", options: nil, metrics: nil, views: views))
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[topLayoutGuide][ur(==20)]", options: nil, metrics: nil, views: views))
+        
+        // Layout lower left block
+        // Tried using bottomLayoutGuide to space blocks above toolbar, but it didn't work. Using spacer equal to toolbar height.
+        
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[ll(==20)]", options: nil, metrics: nil, views: views))
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[ll(==20)][spacer(==toolbar)]|", options: nil, metrics: nil, views: views))
+        
+        //Layout lower right block
+        
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[lr(==20)]|", options: nil, metrics: nil, views: views))
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[lr(==20)][spacer(==toolbar)]|", options: nil, metrics: nil, views: views))
+
+
     }
     
     override func shouldAutorotate() -> Bool {
