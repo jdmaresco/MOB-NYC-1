@@ -1,18 +1,14 @@
-//
-//  SecondViewController.swift
-//  Lesson07
-//
-//  Created by Rudd Taylor on 9/30/14.
-//  Copyright (c) 2014 General Assembly. All rights reserved.
-//
+
 
 import UIKit
 
 class SecondViewController: UIViewController {
 
+    @IBOutlet weak var secondTextView: UITextView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // print the values of string and slider in the settings bundle of the app to secondTextView
     }
 }

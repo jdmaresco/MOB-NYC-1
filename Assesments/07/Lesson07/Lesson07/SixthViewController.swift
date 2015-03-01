@@ -1,19 +1,14 @@
 
-//
-//  SixthViewController.swift
-//  Lesson07
-//
-//  Created by Rudd Taylor on 9/30/14.
-//  Copyright (c) 2014 General Assembly. All rights reserved.
-//
 
 import UIKit
 
 class SixthViewController: UIViewController {
 
+    @IBOutlet weak var sixthTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Take the flat file saved in previous view and print it back to sixthTextView
     }
 }
