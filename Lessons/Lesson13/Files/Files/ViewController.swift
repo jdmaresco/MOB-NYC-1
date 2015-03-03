@@ -15,9 +15,10 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         if let documentPath = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first as? NSURL {
             if let string = NSBundle.mainBundle().pathForResource("file", ofType: "plist") {
-                let array = NSArray(contentsOfFile: string)
                 
+                let array = NSArray(contentsOfFile: string)
                 println(array)
+                
             }
             let filePath = documentPath.URLByAppendingPathComponent("file.plist", isDirectory: false)
             
